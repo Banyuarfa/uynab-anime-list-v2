@@ -1,0 +1,11 @@
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.active {
+  display: block;
+}

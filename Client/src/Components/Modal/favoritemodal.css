@@ -1,0 +1,9 @@
+.favoritelist-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 7.5em);
+  place-content: center;
+}
+
+.favoritelist-empty {
+  text-wrap: balance;
+}

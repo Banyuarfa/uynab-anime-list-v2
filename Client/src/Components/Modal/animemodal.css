@@ -1,0 +1,68 @@
+.anime-modal-header {
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  background: transparent;
+}
+.anime-modal-header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.5);
+  z-index: 1;
+  -webkit-filter: brightness(0.5);
+}
+.anime-modal-header-info {
+  z-index: 2;
+  color: white;
+}
+.anime-modal-body {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.anime-modal-body-synopsis summary {
+  font-weight: bold;
+  font-size: large;
+}
+.anime-modal-body-episodes-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  place-content: center;
+  list-style-type: none;
+}
+.anime-modal-body-episodes-list-item{
+  display: flex;
+  padding: .5rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  cursor: pointer;
+  justify-content: center;
+}
+.anime-modal-body-episodes-list-item:hover{
+  background-color: rgb(159, 174, 240);
+}
+
+.anime-modal-body-episodes-list-item a{
+  color: black;
+  text-decoration: none;
+}
+.anime-modal-body-episodes-list-item img{
+  width: 100%;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+}
+.anime-modal-body-episodes-list-item p{
+  text-wrap: wrap;
+}
