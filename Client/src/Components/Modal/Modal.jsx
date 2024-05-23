@@ -16,8 +16,9 @@ export function DisclaimerModal() {
       <p className="disclaimer-text">
         UynabAnimeListV2 hanyalah situs kumpulan informasi dari berbagai anime
         seperti <a href="https://myanimelist.net">MAL</a>, bukan situs streaming
-        anime. Situs ini masih banyak kekurangannya, jadi mohon dimaklumi jika
-        masih ada bug. Jika kamu menemukan bug, silahkan laporkan kepada{" "}
+        anime. Situs ini masih dalam tahap pengembangan dan banyak
+        kekurangannya, jadi mohon dimaklumi jika terdapat bug. Jika kamu
+        menemukan bug, silahkan laporkan kepada{" "}
         <a href="https://www.instagram.com/nyu_arfx/">Developer</a> melalui
         direct message instagram.
         <br />
