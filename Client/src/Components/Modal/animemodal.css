@@ -30,15 +30,15 @@
   font-weight: bold;
   font-size: large;
 }
-.anime-modal-body-episodes-list{
+.anime-modal-body-episodes-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   place-content: center;
   list-style-type: none;
 }
-.anime-modal-body-episodes-list-item{
+.anime-modal-body-episodes-list-item {
   display: flex;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
   -moz-border-radius: 0.5rem;
@@ -47,22 +47,22 @@
   cursor: pointer;
   justify-content: center;
 }
-.anime-modal-body-episodes-list-item:hover{
+.anime-modal-body-episodes-list-item:hover {
   background-color: rgb(159, 174, 240);
 }
 
-.anime-modal-body-episodes-list-item a{
+.anime-modal-body-episodes-list-item a {
   color: black;
   text-decoration: none;
 }
-.anime-modal-body-episodes-list-item img{
+.anime-modal-body-episodes-list-item img {
   width: 100%;
-  border-radius: .5rem;
-  -webkit-border-radius: .5rem;
-  -moz-border-radius: .5rem;
-  -ms-border-radius: .5rem;
-  -o-border-radius: .5rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
 }
-.anime-modal-body-episodes-list-item p{
+.anime-modal-body-episodes-list-item p {
   text-wrap: wrap;
 }

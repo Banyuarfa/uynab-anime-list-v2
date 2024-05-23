@@ -5,12 +5,12 @@ import "./home.css";
 import ListOfAnime from "../../Components/ListOfAnime/ListOfAnime.jsx";
 
 function Header() {
-  const {setQuery,  setUrl, setPage } = useContext(Context);
-  const [searchValue, setSearchValue] = useState('');
+  const { setQuery, setUrl, setPage } = useContext(Context);
+  const [searchValue, setSearchValue] = useState("");
 
   function onSearch(e) {
-    setUrl("/anime")
-    setPage(1)
+    setUrl("/anime");
+    setPage(1);
     setSearchValue(e.target.value);
   }
 
@@ -50,10 +50,8 @@ function Main() {
   return (
     <div className="main">
       <h1>Animes</h1>
-      {animes.length === 0 && (
-        <h2>Tidak ada anime</h2>
-      ) }
-      
+      {animes.length === 0 && <h2>Tidak ada anime</h2>}
+
       {loading ? (
         <h2>Loading...</h2>
       ) : (
@@ -97,7 +95,11 @@ function Pages() {
 }
 
 function Footer() {
-  return <footer className="footer">Made with ❤️ by <a href="https://www.instagram.com/nyu_arfx/">Dev</a></footer>;
+  return (
+    <footer className="footer">
+      Made with ❤️ by <a href="https://www.instagram.com/nyu_arfx/">Dev</a>
+    </footer>
+  );
 }
 export default function Home() {
   return (

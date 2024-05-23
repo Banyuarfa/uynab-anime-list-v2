@@ -103,8 +103,12 @@
 .page-number {
   cursor: pointer;
 }
-footer{
-  background: linear-gradient( to bottom right, var(--primary), var(--secondary) );
+footer {
+  background: linear-gradient(
+    to bottom right,
+    var(--primary),
+    var(--secondary)
+  );
   height: 5rem;
   width: 100vw;
   display: grid;
