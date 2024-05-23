@@ -11,7 +11,7 @@
   place-content: center;
 }
 .header-background {
-  height: 70vh;
+  height: 25rem;
   filter: brightness(50%);
   -webkit-filter: brightness(50%);
   width: 100vw;
