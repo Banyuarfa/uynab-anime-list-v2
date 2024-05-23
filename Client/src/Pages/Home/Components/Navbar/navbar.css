@@ -63,7 +63,7 @@
   display: none;
   grid-template-rows: 1fr 1fr;
   position: absolute;
-  right: 1.5em;
+  right: 0;
   top: 4em;
   background-color: #fff;
   list-style-type: none;
