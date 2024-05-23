@@ -157,7 +157,7 @@ function Children() {
 
 export default function App() {
   return (
-    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+    <GoogleOAuthProvider clientId={process.env.VITE_GOOGLE_CLIENT_ID}>
       <CookiesProvider defaultSetOptions={{ path: "/" }}>
         <Children />
       </CookiesProvider>
