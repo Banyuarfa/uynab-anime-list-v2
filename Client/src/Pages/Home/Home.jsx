@@ -5,11 +5,12 @@ import "./home.css";
 import ListOfAnime from "../../Components/ListOfAnime/ListOfAnime.jsx";
 
 function Header() {
-  const {setQuery,  setUrl } = useContext(Context);
+  const {setQuery,  setUrl, setPage } = useContext(Context);
   const [searchValue, setSearchValue] = useState('');
 
   function onSearch(e) {
     setUrl("/anime")
+    setPage(1)
     setSearchValue(e.target.value);
   }
 
@@ -48,7 +49,7 @@ function Main() {
   const { animes, loading } = useContext(Context);
   return (
     <div className="main">
-      <h1>Movie</h1>
+      <h1>Animes</h1>
       {animes.length === 0 && (
         <h2>Tidak ada anime</h2>
       ) }

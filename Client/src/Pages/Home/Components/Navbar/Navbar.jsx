@@ -32,7 +32,7 @@ export default function Navbar() {
         <button className="sidebar-toggle" onClick={sidebarHandleClick}>
           <img src={menuBurger} alt="menu" />
         </button>
-        <h1 className="navbar-title">UynabAnimeList</h1>
+        <h1 className="navbar-title">UynabAnimeListV2</h1>
         <ul className="navigation">
           {width >= 768 ? (
             <>

@@ -4,7 +4,11 @@ import Navbar from "./Pages/Home/Components/Navbar/Navbar.jsx";
 import Sidebar from "./Pages/Home/Components/Sidebar/Sidebar.jsx";
 import { useEffect, useState } from "react";
 import { Context } from "./Utils/Context.jsx";
-import Modal, { AnimeModal, FavoriteModal } from "./Components/Modal/Modal.jsx";
+import Modal, {
+  AnimeModal,
+  FavoriteModal,
+  DisclaimerModal,
+} from "./Components/Modal/Modal.jsx";
 import { useCookies } from "react-cookie";
 import { jwtDecode } from "jwt-decode";
 import { getLocalStorage, setLocalStorage } from "./Utils/LocalStorage.jsx";
@@ -93,8 +97,11 @@ function Children() {
       favorites !== null && setLocalStorage("favorites", favorites);
     }, 10);
   }, [favorites]);
-  console.log(import.meta.env);
-  
+
+  useEffect(() => {
+    setModalType("disclaimer");
+    setShowModal(true);
+  }, []);
 
   return (
     <Context.Provider
@@ -124,6 +131,11 @@ function Children() {
         setUrl,
       }}
     >
+      {modalType === "disclaimer" && (
+        <Modal title={"Disclaimer"}>
+          <DisclaimerModal />
+        </Modal>
+      )}
       {modalType === "favorite" && (
         <Modal title={"Favorite List"}>
           <FavoriteModal />
@@ -145,11 +157,7 @@ function Children() {
 
 export default function App() {
   return (
-    <GoogleOAuthProvider
-      clientId={
-        "1086400797727-ulnp3vggdpjkpbocqiucppffd6v6u8e3.apps.googleusercontent.com"
-      }
-    >
+    <GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
       <CookiesProvider defaultSetOptions={{ path: "/" }}>
         <Children />
       </CookiesProvider>

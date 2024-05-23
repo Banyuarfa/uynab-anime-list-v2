@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+import "./disclaimermodal.css";
 import "./favoritemodal.css";
 import "./animemodal.css";
 import "./modal.css";
@@ -9,14 +10,17 @@ import ListOfAnime from "../../Components/ListOfAnime/ListOfAnime.jsx";
 import { api } from "../../App.jsx";
 import { getLocalStorage } from "../../Utils/LocalStorage.jsx";
 
-export function ReviewAppModal() {
-
+export function DisclaimerModal() {
   return (
     <>
-      <p>Masukkan review</p>
-      <p>apa yang kurang dari web ini?</p>
-      <textarea name="review" id="review" cols="70" rows="10" ></textarea>
-      <button>kirim</button>
+      <p className="disclaimer-text">
+        UynabAnimeListV2 hanyalah situs kumpulan informasi dari berbagai anime
+        seperti <a href="https://myanimelist.net">MAL</a>, bukan situs streaming
+        anime. Situs ini masih banyak kekurangannya, jadi mohon dimaklumi jika
+        masih ada bug. Jika kamu menemukan bug, silahkan laporkan kepada{" "}
+        <a href="https://www.instagram.com/nyu_arfx/">Developer</a> melalui
+        direct message instagram.
+      </p>
     </>
   );
 }
@@ -40,7 +44,6 @@ export function AnimeModal({ anime }) {
   w.then((res) => setTranslation(res)).catch(() =>
     setTranslation("belum diartikan")
   );
-
 
   return (
     <>
