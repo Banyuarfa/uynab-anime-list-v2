@@ -20,6 +20,12 @@ export function DisclaimerModal() {
         masih ada bug. Jika kamu menemukan bug, silahkan laporkan kepada{" "}
         <a href="https://www.instagram.com/nyu_arfx/">Developer</a> melalui
         direct message instagram.
+        <br />
+        Situs ini merupakan versi terbarukan dari{" "}
+        <a href="https://banyuarfa.github.io/UynabAnimeList/">
+          UynabAnimeList
+        </a>{" "}
+        versi lama.
       </p>
     </>
   );
