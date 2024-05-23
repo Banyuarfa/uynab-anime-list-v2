@@ -85,7 +85,7 @@ function Pages() {
         -
       </button>
       <p onClick={inputPage} className="page-number">
-        {page}
+        {page + "/" + maxPage}
       </p>
       <button className="page-button" onClick={pageUp}>
         +
