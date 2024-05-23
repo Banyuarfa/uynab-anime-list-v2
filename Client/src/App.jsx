@@ -54,13 +54,15 @@ function Children() {
     setUrl(value);
   }
 
-  function addFavorites(anime) {
+  function addFavorites(anime, e) {
+    e.preventDefault();
     favorites.includes(anime)
       ? alert("Anime Sudah Di Tambahkan")
       : setFavorites((favorites) => [...favorites, anime]);
     setLocalStorage("favorites", favorites);
   }
-  function deleteFavorites(anime) {
+  function deleteFavorites(anime, e) {
+    e.preventDefault();
     const trash = favorites.filter((f) => f.mal_id !== anime.mal_id);
     setFavorites(trash);
   }

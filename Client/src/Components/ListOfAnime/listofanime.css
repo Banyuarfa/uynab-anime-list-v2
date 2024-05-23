@@ -31,11 +31,17 @@
   border: none;
   width: fit-content;
 }
+.anime-wrapper {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
 .anime-card-poster--container {
   position: relative;
   width: fit-content;
 }
 .anime-card-poster {
+  position: relative;
   width: 6.5em;
   height: 10em;
   border-radius: 0.5em;
@@ -46,14 +52,14 @@
 }
 
 .anime-card-add-btn {
-  display: grid;
-  place-content: center;
+  /* display: grid;
+  place-content: center; */
   background-color: transparent;
   border: none;
   border-radius: 0 0.5em 0 0.5em;
   position: absolute;
-  right: 8px;
-  top: 5px;
+  right: 0;
+  top: 0;
   -webkit-border-radius: 0 0.5em 0;
   -moz-border-radius: 0 0.5em 0;
   -ms-border-radius: 0 0.5em 0;

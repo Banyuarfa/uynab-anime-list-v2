@@ -48,7 +48,8 @@
 }
 .user {
   display: flex;
-  gap: 0.5em;
+  flex-direction: column-reverse;
+  align-items: center;
   cursor: pointer;
 }
 .user img {

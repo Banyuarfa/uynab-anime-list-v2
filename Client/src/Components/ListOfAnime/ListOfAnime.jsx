@@ -14,24 +14,25 @@ export default function ListOfAnime({ list }) {
     <>
       {list.map((anime) => (
         <li className="anime-grid" key={anime.mal_id}>
-          {favorites.some((f) => f.mal_id === anime.mal_id) ? (
+          
+<div className="anime-wrapper">{favorites.some((f) => f.mal_id === anime.mal_id) ? (
             <button
               className="anime-card-add-btn"
-              onClick={() => deleteFavorites(anime)}
+              onClick={(e) => deleteFavorites(anime,e)}
             >
               <img src={heartFilled} alt="delete" />
             </button>
           ) : (
             <button
               className="anime-card-add-btn"
-              onClick={() => addFavorites(anime)}
+              onClick={(e) => addFavorites(anime,e)}
             >
               <img src={heart} alt="favorite" />
             </button>
           )}
-
           <a onClick={(e) => showAnimeModal(anime, e)} className="anime-card">
             <div className="anime-card-poster--container">
+            
               <img
                 className="anime-card-poster"
                 src={anime.images.jpg.image_url}
@@ -57,7 +58,7 @@ export default function ListOfAnime({ list }) {
                   : anime.aired.string}
               </p>
             </div>
-          </a>
+          </a></div>
         </li>
       ))}
     </>
