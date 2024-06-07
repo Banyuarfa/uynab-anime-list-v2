@@ -1,3 +1,24 @@
+:root {
+  --primary: #00adb5;
+  --secondary: #00adb5;
+  --tertiary: #00adb5;
+  --quaternary: #200e3a;
+}
+.light-mode {
+  --background: #eeeeee;
+  --color: black;
+  --hover: rgb(191, 229, 252, 0.5);
+}
+.dark-mode {
+  --background: #222831;
+  --color: white;
+  --hover: rgba(97, 119, 133, 0.5);
+}
+
+a {
+  color: var(--color);
+}
+
 ::-webkit-scrollbar {
   display: none;
 }

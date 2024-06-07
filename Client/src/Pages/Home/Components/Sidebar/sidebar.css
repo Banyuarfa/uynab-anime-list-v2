@@ -7,8 +7,8 @@
 }
 .sidebar .container {
   width: 10rem;
-  background-color: #fff;
-  border-right: 1px solid aliceblue;
+  background-color: var(--background);
+  border-right: 1px solid rgb(159, 174, 240, 0.5);
   height: calc(100vh - 3.5em);
 }
 
@@ -18,7 +18,7 @@
 }
 .sidebar .container ul li {
   list-style: none;
-  background-color: #fff;
+  background-color: var(--background);
   height: 3rem;
 }
 .sidebar .container ul li button {
@@ -28,9 +28,10 @@
   height: 100%;
   border: none;
   background-color: transparent;
+  color: var(--color);
 }
 .sidebar .container ul li button:hover {
-  background-color: #bfe5fc;
+  background-color: var(--hover);
 }
 .sidebar-active {
   display: block;

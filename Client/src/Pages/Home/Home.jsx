@@ -14,10 +14,7 @@ function Header() {
     setSearchValue(e.target.value);
   }
 
-  function submitHandle() {
-    setQuery(searchValue);
-    setUrl("/anime");
-  }
+  function submitHandle() {}
   return (
     <div className="header-container">
       <div className="header-background" />
@@ -33,13 +30,19 @@ function Header() {
           onChange={(e) => onSearch(e)}
           autoComplete="off"
         />
-        <button
-          type="button"
-          className="header-search-button"
+        <select
           onClick={submitHandle}
+          className="header-search-button"
+          onChange={(e) => {
+            setUrl(e.target.value);
+            setQuery(searchValue);
+          }}
+          type="button"
+          name="cari"
         >
-          Cari
-        </button>
+          <option value="/anime">Anime</option>
+          <option value="/manga">Manga</option>
+        </select>
       </div>
     </div>
   );
@@ -49,7 +52,7 @@ function Main() {
   const { animes, loading } = useContext(Context);
   return (
     <div className="main">
-      <h1>Animes</h1>
+      <h1>Animes/Mangas</h1>
       {animes.length === 0 && <h2>Tidak ada anime</h2>}
 
       {loading ? (
@@ -59,6 +62,7 @@ function Main() {
           <ListOfAnime list={animes} />
         </ul>
       )}
+
       <Pages />
     </div>
   );

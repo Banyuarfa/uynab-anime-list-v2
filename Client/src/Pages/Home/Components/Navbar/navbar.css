@@ -26,6 +26,7 @@
 }
 .navigation {
   display: flex;
+  align-items: center;
   gap: 1em;
   list-style-type: none;
 }
@@ -35,6 +36,10 @@
 .navigation-button img {
   height: 1.5em;
 }
+.navbar h1 {
+  color: var(--color);
+}
+
 .navbar-search {
   display: none;
   border: none;
@@ -46,11 +51,15 @@
 .navbar-search:focus {
   outline: none;
 }
+.navigation button img {
+  height: 2em;
+}
 .user {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   cursor: pointer;
+  color: var(--color);
 }
 .user img {
   border-radius: 100%;
@@ -65,7 +74,7 @@
   position: absolute;
   right: 0;
   top: 4em;
-  background-color: #fff;
+  background-color: var(--background);
   list-style-type: none;
   border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
@@ -82,10 +91,11 @@
   border: none;
   width: 100%;
   height: 100%;
+  color: var(--color);
 }
 .user-menu *:hover {
   cursor: pointer;
-  background-color: #bfe5fc;
+  background-color: var(--hover);
 }
 .display-grid {
   display: grid;

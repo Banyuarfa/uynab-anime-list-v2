@@ -1,5 +1,5 @@
 .modal {
-  display: none;
+  display: block;
   position: fixed;
   z-index: 9999;
   top: 0;
@@ -7,6 +7,7 @@
   background-color: transparent;
   width: 100vw;
   height: 100vh;
+  right: 100rem;
 }
 .modal-overlay {
   background-color: rgb(0, 0, 0, 0.5);
@@ -22,7 +23,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #fff;
+  background-color: var(--background);
   width: 90%;
   height: 90%;
   border: none;
@@ -38,13 +39,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 1em;
-  background-color: #fff;
+  background-color: var(--background);
   border-radius: 0.5em 0.5em 0 0;
   -webkit-border-radius: 0.5em 0.5em 0 0;
   -moz-border-radius: 0.5em 0.5em 0 0;
   -ms-border-radius: 0.5em 0.5em 0 0;
   -o-border-radius: 0.5em 0.5em 0 0;
   border-bottom: solid 1px rgb(159, 174, 240);
+  color: var(--color);
 }
 .modal-header button {
   border: none;
@@ -58,5 +60,5 @@
 }
 
 .modal-active {
-  display: block;
+  right: 0;
 }

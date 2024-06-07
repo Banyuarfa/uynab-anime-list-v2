@@ -14,7 +14,7 @@ import { jwtDecode } from "jwt-decode";
 import { getLocalStorage, setLocalStorage } from "./Utils/LocalStorage.jsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { CookiesProvider } from "react-cookie";
-export const api = "https://api.jikan.moe/v4";
+export const api = import.meta.env.VITE_API;
 
 function Children() {
   const [animes, setAnimes] = useState([]);
@@ -28,6 +28,7 @@ function Children() {
   const [clickedAnime, setClickedAnime] = useState({});
   const [user, setUser] = useState(null);
   const [query, setQuery] = useState("");
+  const [dark, setDark] = useState("");
 
   const [cookies, setCookie, removeCookie] = useCookies(["user"]);
 
@@ -82,6 +83,22 @@ function Children() {
     }
   }
 
+  function setDarkMode() {
+    if (dark !== "dark-mode") {
+      setLocalStorage("darkMode", "dark-mode");
+      setDark(getLocalStorage("darkMode"));
+    } else {
+      setLocalStorage("darkMode", "light-mode");
+      setDark(getLocalStorage("darkMode"));
+    }
+  }
+
+  useEffect(() => {
+    document.querySelector("aside").className = `sidebar ${dark}`;
+    document.querySelector("main").className = `${dark}`;
+    document.querySelector("header").className = `navbar ${dark}`;
+  }, [dark]);
+
   useEffect(() => {
     getAnimes(url, page, query).then((res) => {
       setAnimes(res.data);
@@ -92,6 +109,8 @@ function Children() {
   useEffect(() => {
     cookies.user ? setUser(jwtDecode(cookies.user)) : setUser(null);
     getLocalStorage("favorites") && setFavorites(getLocalStorage("favorites"));
+    getLocalStorage("darkMode") ? setDark(true) : setDark(false);
+    setDark(getLocalStorage("darkMode"));
   }, []);
 
   useEffect(() => {
@@ -108,6 +127,8 @@ function Children() {
   return (
     <Context.Provider
       value={{
+        dark,
+        setDarkMode,
         animes,
         setPage,
         page,

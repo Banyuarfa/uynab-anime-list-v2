@@ -1,16 +1,25 @@
 import "./navbar.css";
 import menuBurger from "../../../../assets/menu-burger.svg";
-import favList from "../../../../assets/wishlist-heart.svg";
-import { useContext, useEffect, useState } from "react";
+import favList from "../../../../assets/wishlist-heart.png";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Context } from "../../../../Utils/Context";
 import defaultuserpicture from "../../../../assets/defaultuserpicture.png";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import darkMode from "../../../../assets/night-mode.png";
+import lightMode from "../../../../assets/light-mode.png";
 
 export default function Navbar() {
   const [width, setWidth] = useState();
-  const { showFavoriteModal, user, setUser, setCookie, removeCookie } =
-    useContext(Context);
+  const {
+    dark,
+    setDarkMode,
+    showFavoriteModal,
+    user,
+    setUser,
+    setCookie,
+    removeCookie,
+  } = useContext(Context);
 
   function sidebarHandleClick() {
     const sidebar = document.querySelector(".sidebar");
@@ -21,19 +30,22 @@ export default function Navbar() {
     const userMenu = document.querySelector(".user-menu");
     userMenu.classList.toggle("display-grid");
   }
-
+  const header = useRef(null);
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(() => window.innerWidth));
   }, [width]);
 
   return (
-    <header className="navbar">
+    <header ref={header} className="navbar">
       <nav className="container">
         <button className="sidebar-toggle" onClick={sidebarHandleClick}>
           <img src={menuBurger} alt="menu" />
         </button>
         <h1 className="navbar-title">UAL v2</h1>
         <ul className="navigation">
+          <button onClick={setDarkMode}>
+            <img src={dark === "dark-mode" ? darkMode : lightMode} alt="" />
+          </button>
           {width >= 768 ? (
             <>
               <li
@@ -74,18 +86,22 @@ export default function Navbar() {
                   </button>
                 </li>
               ) : (
-                <GoogleLogin
-                  onSuccess={(credentialResponse) => {
-                    const decoded = jwtDecode(credentialResponse.credential);
-                    setUser(decoded);
-                    setCookie("user", credentialResponse.credential, {
-                      expires: new Date(decoded.exp * 1000),
-                    });
-                  }}
-                  onError={() => {
-                    alert("Login Failed");
-                  }}
-                />
+                <li className="user-menu-item">
+                  <GoogleLogin
+                    text="signin"
+                    width={"20px"}
+                    onSuccess={(credentialResponse) => {
+                      const decoded = jwtDecode(credentialResponse.credential);
+                      setUser(decoded);
+                      setCookie("user", credentialResponse.credential, {
+                        expires: new Date(decoded.exp * 1000),
+                      });
+                    }}
+                    onError={() => {
+                      alert("Login Failed");
+                    }}
+                  />
+                </li>
               )}
             </ul>
           </li>

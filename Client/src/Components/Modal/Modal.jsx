@@ -66,9 +66,9 @@ export function AnimeModal({ anime }) {
           <h3 className="anime-modal-header-title">{anime.title}</h3>
           <p className="anime-modal-header-status">Status: {anime.status}</p>
           <p className="anime-modal-header-year">
-            {anime.aired.string.includes("to")
-              ? anime.aired.string.slice(0, anime.aired.string.indexOf(" to "))
-              : anime.aired.string}
+            {anime.aired?.string.includes("to")
+              ? anime.aired?.string.slice(0, anime.aired.string.indexOf(" to "))
+              : anime.aired?.string}
           </p>
           <p className="anime-modal-header-genre">
             Genre: {anime.genres.map((genre) => genre.name).join(", ")}
@@ -84,7 +84,7 @@ export function AnimeModal({ anime }) {
           <p>{translation || anime.synopsis}</p>
         </details>
         <div className="anime-modal-body-trailer-container">
-          {anime.trailer.embed_url ? (
+          {anime.trailer?.embed_url ? (
             <>
               <h3>Trailer</h3>
               <iframe
@@ -156,7 +156,11 @@ export default function Modal({ children, title }) {
   }
 
   return (
-    <dialog className={`modal ${showModal ? "modal-active" : ""}`}>
+    <dialog
+      className={`modal ${showModal ? "modal-active" : ""} ${
+        getLocalStorage("darkMode") || ""
+      }`}
+    >
       <div className="modal-overlay" onClick={modalHandleClick}></div>
       <div className="container">
         <div className="modal-header">

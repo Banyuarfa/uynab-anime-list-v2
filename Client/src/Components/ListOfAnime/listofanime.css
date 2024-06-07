@@ -13,7 +13,7 @@
 .anime-grid:active,
 .anime-grid:hover {
   cursor: pointer;
-  background-color: #bfe5fc;
+  background-color: var(--hover);
   border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   -moz-border-radius: 0.5em;
@@ -24,7 +24,7 @@
 .anime-card {
   background-color: transparent;
   text-decoration: none;
-  color: black;
+  color: var(--color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,8 +52,6 @@
 }
 
 .anime-card-add-btn {
-  /* display: grid;
-  place-content: center; */
   background-color: transparent;
   border: none;
   border-radius: 0 0.5em 0 0.5em;
@@ -69,23 +67,13 @@
 .anime-card-add-btn img {
   height: 2em;
   width: 2em;
-  background-color: rgb(255, 255, 255);
-  border-radius: 100px;
-  -webkit-border-radius: 100px;
-  -moz-border-radius: 100px;
-  -ms-border-radius: 100px;
-  -o-border-radius: 100px;
-}
-.anime-card-add-btn:hover img,
-.anime-card-add-btn:active img {
-  background-color: #bfe5fc;
 }
 
 .anime-card-score {
   position: absolute;
   font-size: small;
   width: 3.5em;
-  bottom: 7px;
+  bottom: 0;
   left: 0em;
   background: linear-gradient(
     to bottom right,
@@ -108,5 +96,5 @@
   font-size: small;
 }
 .anime-card-year {
-  color: grey;
+  color: var(--color);
 }
