@@ -7,7 +7,7 @@ import translate from "translate";
 import { useContext, useEffect, useState } from "react";
 import { Context } from "../../Utils/Context";
 import ListOfAnime from "../../Components/ListOfAnime/ListOfAnime.jsx";
-import { api } from "../../App.jsx";
+import { api } from "../../Utils/Api.jsx";
 import { getLocalStorage } from "../../Utils/LocalStorage.jsx";
 
 export function DisclaimerModal() {

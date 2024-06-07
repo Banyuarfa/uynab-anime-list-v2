@@ -14,7 +14,7 @@ import { jwtDecode } from "jwt-decode";
 import { getLocalStorage, setLocalStorage } from "./Utils/LocalStorage.jsx";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { CookiesProvider } from "react-cookie";
-export const api = import.meta.env.VITE_API;
+import { api } from "./Utils/Api.jsx";
 
 function Children() {
   const [animes, setAnimes] = useState([]);
@@ -109,7 +109,7 @@ function Children() {
   useEffect(() => {
     cookies.user ? setUser(jwtDecode(cookies.user)) : setUser(null);
     getLocalStorage("favorites") && setFavorites(getLocalStorage("favorites"));
-    getLocalStorage("darkMode") ? setDark(true) : setDark(false);
+    !getLocalStorage("darkMode") && setLocalStorage("darkMode", "light-mode");
     setDark(getLocalStorage("darkMode"));
   }, []);
 
