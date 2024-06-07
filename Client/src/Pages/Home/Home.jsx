@@ -53,7 +53,7 @@ function Main() {
   return (
     <div className="main">
       <h1>Animes/Mangas</h1>
-      {animes.length === 0 && <h2>Tidak ada anime</h2>}
+      {animes?.length === 0 && <h2>Tidak ada anime</h2>}
 
       {loading ? (
         <h2>Loading...</h2>

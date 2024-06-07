@@ -103,7 +103,7 @@ export function AnimeModal({ anime }) {
         <div className="anime-modal-body-episodes">
           <h3>Episodes</h3>
           <ul className="anime-modal-body-episodes-list">
-            {episodes.length === 0 && <p>Episode belum tersedia</p>}
+            {episodes?.length === 0 && <p>Episode belum tersedia</p>}
             {episodes.map((episode) => {
               return (
                 <>
@@ -118,7 +118,7 @@ export function AnimeModal({ anime }) {
                       />
                       <p>{episode.episode}:</p>
                       <p>
-                        {episode.title.length > 17
+                        {episode.title?.length > 17
                           ? episode.title.slice(0, 17) + "..."
                           : episode.title}
                       </p>
@@ -138,7 +138,7 @@ export function FavoriteModal() {
   const { favorites } = useContext(Context);
   return (
     <ul className="favoritelist-list">
-      {favorites.length === 0 ? (
+      {favorites?.length === 0 ? (
         <p className="favoritelist-empty">Tambahkan favorite anime</p>
       ) : (
         <ListOfAnime list={getLocalStorage("favorites")} />

@@ -44,7 +44,7 @@ export default function ListOfAnime({ list }) {
               </div>
               <div className="anime-information">
                 <p className="anime-card-title">
-                  {anime.title.length > 15
+                  {anime.title?.length > 15
                     ? anime.title.slice(0, 13) + "..."
                     : anime.title}
                 </p>
